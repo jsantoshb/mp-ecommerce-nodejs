@@ -32,7 +32,8 @@ app.get('/failure', function (req, res) {
 app.post('/checkout',function (req, res){
 
     console.log('****************');
-    console.log(req);
+    console.log(req.params);
+    console.log(req.query);
     console.log('****************');
 
     res.status(200).json({ok:true});
