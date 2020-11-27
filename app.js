@@ -36,12 +36,12 @@ app.get('/', function (req, res) {
 app.post('/checkout',function (req, res){
 
     console.log('****************');
-    console.log(req.params);
-    console.log(JSON.stringify(req.query));
-    console.log(req.body);
+    console.log(req);
+    console.log('****************');
+    console.log(req.query.json());
     console.log('****************');
 
-    res.status(200).json({ok:true});
+    res.status(200).json();
 })
 
 app.listen(port);
