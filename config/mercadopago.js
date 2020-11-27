@@ -18,8 +18,8 @@ let preference = {
         id:'1234',
         title: query.title,
         description:'Dispositivo móvil de Tienda e-commerce',
-        picture_url: query.img,
-        unit_price: query.price,
+        picture_url: `https://jsantoshb-mp-commerce-nodejs.herokuapp.com` + query.img,
+        unit_price: Number(query.price),
         currency_id:'MXN',
         quantity: 1
       }
@@ -71,14 +71,16 @@ let preference = {
       // expiration_date_to: '2016-02-28T12:00:00.000-04:00'
   };
   
- return await mercadopago.preferences.create(preference)
+  global.id = await mercadopago.preferences.create(preference)
   .then(function(response){
-     global.id = response.body.id;
+     return response.body.id;
   }).catch(function(error){
     console.log(error);
   });
 
+  return global.id;
+
 }
 
-module.exports = getPreference
+module.exports = {getPreference}
 

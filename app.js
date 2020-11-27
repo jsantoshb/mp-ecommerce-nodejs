@@ -1,7 +1,7 @@
 var express = require('express');
 var exphbs  = require('express-handlebars');
 var port = process.env.PORT || 3000
-var config = require('./config/mercadopago');
+var {getPreference} = require('./config/mercadopago');
 var app = express();
 
 app.engine('handlebars', exphbs());
@@ -12,7 +12,7 @@ app.use(express.static('assets'));
 app.use('/assets', express.static(__dirname + '/assets'));
 
 app.get('/detail', async function (req, res) {
-    await config.getPreference(req.query)
+    let id = await getPreference(req.query)
     .then(id=> id)
     .catch(err=> err)
     console.log(req.query)
