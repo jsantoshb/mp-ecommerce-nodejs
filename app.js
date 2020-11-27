@@ -1,7 +1,7 @@
 var express = require('express');
 var exphbs  = require('express-handlebars');
 var port = process.env.PORT || 3000
-//require('./config/mercadopago');
+require('./config/mercadopago');
 var app = express();
  
 app.engine('handlebars', exphbs());
