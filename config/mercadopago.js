@@ -11,7 +11,7 @@ mercadopago.configure({
 let preference = {
   items: [
     {
-      id:1234,
+      id:'1234',
       title: 'Iphone 8',
       description:'Dispositivo móvil de Tienda e-commerce',
       picture_url:'https://jsantoshb-mp-ecommerce-nodejs.herokuapp.com/assets/003.jpg',
@@ -27,7 +27,7 @@ let preference = {
         email: 'test_user_81131286@testuser.com',
         phone: {
             area_code: '52',
-            number: '5549737300'
+            number: 5549737300
         },
         identification: {
             type: 'ID',
@@ -51,8 +51,8 @@ let preference = {
             }
         ],
         installments: 6,
-        default_payment_method_id: null,
-        default_installments: 1
+        default_installments: 1,
+        statement_descriptor:'MERCADOPAGO'
     },
     back_urls: {
         success: 'https://jsantoshb-mp-ecommerce-nodejs.herokuapp.com/success',
@@ -61,7 +61,7 @@ let preference = {
     },
     auto_return: 'approved',
     notification_url:'https://jsantoshb-mp-ecommerce-nodejs.herokuapp.com/checkout',
-    statement_descriptor:'MERCADO_PAGO'
+  
     // expires: true,
     // expiration_date_from: '2016-02-01T12:00:00.000-04:00',
     // expiration_date_to: '2016-02-28T12:00:00.000-04:00'
@@ -69,7 +69,8 @@ let preference = {
 
 mercadopago.preferences.create(preference)
 .then(function(response){
-  global.id = response.body.id;
+   global.id = response.body.id;
 }).catch(function(error){
   console.log(error);
 });
+

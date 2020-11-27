@@ -1,9 +1,9 @@
 var express = require('express');
 var exphbs  = require('express-handlebars');
 var port = process.env.PORT || 3000
-require('./config/mercadopago');
+var config = require('./config/mercadopago');
 var app = express();
- 
+
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/detail', function (req, res) {
-    res.render('detail', req.query);
+    res.render('detail', {...req.query, mpid: global.id});
 });
 
 app.get('/success', function (req, res) {
