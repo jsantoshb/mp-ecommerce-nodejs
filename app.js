@@ -37,7 +37,7 @@ app.post('/checkout',function (req, res){
 
     console.log('****************');
     console.log(req.params);
-    console.log(req.query);
+    console.log(JSON.stringify(req.query));
     console.log(req.body);
     console.log('****************');
 

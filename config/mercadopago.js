@@ -18,7 +18,7 @@ let preference = {
         id:'1234',
         title: query.title,
         description:'Dispositivo móvil de Tienda e-commerce',
-        picture_url: `https://jsantoshb-mp-commerce-nodejs.herokuapp.com` + query.img,
+        picture_url: `https://jsantoshb-mp-commerce-nodejs.herokuapp.com` + query.img.replace('.',''),
         unit_price: Number(query.price),
         currency_id:'MXN',
         quantity: 1
@@ -64,7 +64,7 @@ let preference = {
       },
       auto_return: 'approved',
       external_reference:process.env.EMAIL,
-      notification_url:'https://jsantoshb-mp-ecommerce-nodejs.herokuapp.com/checkout',
+      notification_url:'https://jsantoshb-mp-ecommerce-nodejs.herokuapp.com/checkout?source_news=webhooks',
    
       // expires: true,
       // expiration_date_from: '2016-02-01T12:00:00.000-04:00',
@@ -77,6 +77,11 @@ let preference = {
   }).catch(function(error){
     console.log(error);
   });
+
+//   const getWebHookNotification = ()=> {
+//       mercadopago.
+
+//   }
 
   return global.id;
 
