@@ -11,7 +11,9 @@ app.use(express.static('assets'));
  
 app.use('/assets', express.static(__dirname + '/assets'));
 
-app.get('/detail', function (req, res) {
+app.get('/detail', async function (req, res) {
+    await config.getPreference(req.query)
+    console.log(req.query)
     res.render('detail', {...req.query, mpid: global.id});
 });
 
