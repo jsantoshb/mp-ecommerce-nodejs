@@ -11,10 +11,6 @@ app.use(express.static('assets'));
  
 app.use('/assets', express.static(__dirname + '/assets'));
 
-app.get('/', function (req, res) {
-    res.render('home');
-});
-
 app.get('/detail', function (req, res) {
     res.render('detail', {...req.query, mpid: global.id});
 });
@@ -27,6 +23,10 @@ app.get('/pending', function (req, res) {
 });
 app.get('/failure', function (req, res) {
     res.render('failure', req.query);
+});
+
+app.get('/', function (req, res) {
+    res.render('home');
 });
 
 app.post('/checkout',function (req, res){
