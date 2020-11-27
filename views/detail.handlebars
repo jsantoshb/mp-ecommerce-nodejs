@@ -84,7 +84,12 @@
                                     {{ unit }}
                                 </h3>
                             </div>
-                            <button type="submit" class="mercadopago-button" formmethod="post" >Pagar</button>
+                            <button type="submit" class="mercadopago-button" formmethod="post"
+                                  src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
+                                  data-preference-id='<%= global.id %>'
+                                  data-button-label="Pagar la compra"
+                            
+                             >Pagar</button>
                         </div>
                     </div>
                 </div>
