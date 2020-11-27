@@ -46,7 +46,11 @@
 
 
     <body class="as-theme-light-heroimage">
-
+           <script
+        src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
+        data-preference-id={{global.id}}
+        data-button-label="Pagar la compra"
+        >
         <div class="stack">
             
              {{{body}}}
@@ -58,11 +62,7 @@
         </div>
         <div id="ac-gn-viewport-emitter"> </div>
 
-           <script
-        src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
-        data-preference-id='<%= global.id %>'
-        data-button-label="Pagar la compra"
-        >
+
     </script>
     </body>
 </html>
