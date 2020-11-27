@@ -13,12 +13,7 @@
     crossorigin="anonymous"></script>
     <script src="https://www.mercadopago.com/v2/security.js" view=""></script>
 
-    <script
-        src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
-        data-preference-id='<%= global.id %>'
-        data-button-label="Comprar"
-        >
-    </script>
+ 
 
     <link rel="stylesheet" href="/assets/category-landing.css" media="screen, print">
 
@@ -62,5 +57,12 @@
             <circle class="mp-spinner-path" cx="50" cy="50" r="20" fill="none" stroke-miterlimit="10"></circle> </svg> 
         </div>
         <div id="ac-gn-viewport-emitter"> </div>
+
+           <script
+        src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"
+        data-preference-id='<%= global.id %>'
+        data-button-label="Pagar la compra"
+        >
+    </script>
     </body>
 </html>
