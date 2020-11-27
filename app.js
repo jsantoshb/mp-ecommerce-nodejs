@@ -38,7 +38,7 @@ app.post('/checkout',function (req, res){
     console.log('****************');
     console.log(req);
     console.log('****************');
-    console.log(req.query.json());
+    console.log(req.query);
     console.log('****************');
 
     res.status(200).json();
