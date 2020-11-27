@@ -29,10 +29,10 @@ app.get('/failure', function (req, res) {
     res.render('failure', req.query);
 });
 
-app.post('/checkout', (req, res)=>{
+app.post('/checkout',function (req, res){
 
     console.log('****************');
-    console.log(req.body);
+    console.log(req);
     console.log('****************');
 
     res.status(200).json({ok:true});
