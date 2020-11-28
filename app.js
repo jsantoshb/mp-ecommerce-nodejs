@@ -2,8 +2,11 @@ var express = require('express');
 var exphbs  = require('express-handlebars');
 var port = process.env.PORT || 3000
 var {getPreference} = require('./config/mercadopago');
-var app = express();
+const bodyParser = require('body-parser')
 
+var app = express();
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json()) 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
@@ -35,13 +38,8 @@ app.get('/', function (req, res) {
 
 app.post('/checkout',function (req, res){
 
-    console.log('****************');
-    console.log(req);
-    console.log('****************');
-    console.log(req.query);
-    console.log('****************');
-
-    res.status(200).json();
+    console.log("Notification:", req.body)
+    res.status(200).send();
 })
 
 app.listen(port);

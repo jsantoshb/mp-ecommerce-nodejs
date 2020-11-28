@@ -18,7 +18,7 @@ let preference = {
         id:'1234',
         title: query.title,
         description:'Dispositivo móvil de Tienda e-commerce',
-        picture_url: `https://jsantoshb-mp-commerce-nodejs.herokuapp.com` + query.img.replace('.',''),
+        picture_url: `https://jsantoshb-mp-commerce-nodejs.herokuapp.com` + query.img,
         unit_price: Number(query.price),
         currency_id:'MXN',
         quantity: 1
